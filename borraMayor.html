@@ -17,7 +17,7 @@
     var contadorAciertos = 0;
     var i = 0;
     var mayor = 0;
-    var posicionMayor =0;
+    var posicionMayor =1;
     
     while(contadorAciertos < 10) {
         let entrada = prompt("Introduce un número mayor a 20:");
@@ -25,14 +25,15 @@
         if(entrada > 20) {
             vector[i] = entrada;
             contadorAciertos++;
-            i++;  
-            if(vector[i-1] > mayor) { 
-                mayor = vector[i-1]; 
-                posicionMayor = [i-1];
+  
+            if(vector[i] > mayor) { 
+                mayor = vector[i]; 
+                posicionMayor = [i];
             }
         } else {
             alert("El número no es mayor a 20");
         }
+        i++;
     } //fin del While
 
 
