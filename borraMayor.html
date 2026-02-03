@@ -1,0 +1,49 @@
+<html>
+
+<head>
+
+    <title>borraMayor</title>
+    <style></style>
+
+</head>
+
+<body>
+
+
+</body>
+
+<script>
+    var vector = new Array();
+    var contadorAciertos = 0;
+    var i = 0;
+    var mayor = 0;
+    var posicionMayor =0;
+    
+    while(contadorAciertos < 10) {
+        let entrada = prompt("Introduce un número mayor a 20:");
+        entrada = parseInt(entrada);      
+        if(entrada > 20) {
+            vector[i] = entrada;
+            contadorAciertos++;
+            i++;  
+            if(vector[i-1] > mayor) { 
+                mayor = vector[i-1]; 
+                posicionMayor = [i-1];
+            }
+        } else {
+            alert("El número no es mayor a 20");
+        }
+    } //fin del While
+
+
+        alert("Longitud antes de borrado: "+ vector.length);
+        alert("El numero mayor introducido es: " + mayor + " y está en la posicion "+posicionMayor);
+
+        //borrar el mayor 
+        delete vector[posicionMayor]
+        alert("Longitud despues de borrado: "+ vector.length);
+    
+
+</script>
+    
+</html>
