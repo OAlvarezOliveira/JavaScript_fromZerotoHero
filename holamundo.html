@@ -1,0 +1,44 @@
+<html>
+
+<head>
+
+    <title>Titulo</title>
+    <style></style>
+
+    <script>
+        //Declaracion de variables
+        var numero1;
+        var numero2;
+        var resultado;
+
+        //prompt sirve para pedir datos por teclado , siempre devuelve un String 
+        numero1 = prompt("Dame un numero: ");
+        numero2 = prompt("Dame un numero: ");
+
+
+        //CAST
+        //convierte una cadena a Entero
+         numero1 = parseInt(numero1);
+         numero2 = parseInt(numero2);
+
+        //+ sirve para concatenar cadenas
+                //Funciona sin cast por la conversion implicita de tipos
+
+        if (numero1 > numero2) {
+            resultado = ("El" + numero1 + " es mayor que " + numero2);
+
+        }
+        else { resultado = ("El" + numero1 + "es menor o igual que " + numero2); }
+
+        //Imprime por consola (inspeccionar(12) y console en el navegador)
+        alert(resultado);
+        console.log(resultado);
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
