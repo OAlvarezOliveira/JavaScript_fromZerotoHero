@@ -19,14 +19,25 @@ const PRECIO_POR_LITRO = 1.24;
 let litrosActuales = CAPACIDAD_TOTAL;
 let vehiculosAtendidos = 0;
 let importeTotalRecaudado = 0;
+let importeCliente;
+let litrosADar;
+let importeFinal;
+let litrosDisponibles;
+let litrosSolicitados;
+let cambio;
+let litrosVendidos;
+let importeMedio;
+let litrosSobreMinimo;
+let porcentajeSobreMinimo;
+let porcentajeTotal;
 
 // BUCLE PRINCIPAL
 let continuarAtendiendo = true;
 
 while(continuarAtendiendo){
 
-    // 1. CALCULAR litros disponibles PRIMERO
-    let litrosDisponibles = litrosActuales - CAPACIDAD_MINIMA;
+    // 1. Calcular litros disponibles 
+    litrosDisponibles = litrosActuales - CAPACIDAD_MINIMA;
 
     // 2. Verificar si hay combustible
     if(litrosDisponibles <= 0){
@@ -35,21 +46,17 @@ while(continuarAtendiendo){
     }
 
     // 3. Pedir importe al cliente 
-    let importeCliente;
     do {
         importeCliente = parseFloat(prompt("Introduce el importe a repostar:"));
     } while(importeCliente <= 0 || isNaN(importeCliente));
 
     // 4. Calcular litros solicitados
-    let litrosSolicitados = importeCliente / PRECIO_POR_LITRO;
+    litrosSolicitados = importeCliente / PRECIO_POR_LITRO;
 
     console.log("Litros disponibles:", litrosDisponibles);
     console.log("Litros solicitados:", litrosSolicitados);
 
     // 5. Suministro litros
-    let litrosADar;
-    let importeFinal;
-    
     if(litrosSolicitados <= litrosDisponibles){
         litrosADar = litrosSolicitados;
         importeFinal = importeCliente;
@@ -58,7 +65,7 @@ while(continuarAtendiendo){
     } else {
         litrosADar = litrosDisponibles;
         importeFinal = litrosADar * PRECIO_POR_LITRO;
-        let cambio = importeCliente - importeFinal;
+        cambio = importeCliente - importeFinal;
         
         alert(`AVISO: Solo podemos dar ${litrosADar.toFixed(2)} litros\n` +
               `Importe ajustado: ${importeFinal.toFixed(2)}€\n` +
@@ -82,13 +89,13 @@ console.log("\n========== ESTADÍSTICAS DEL DÍA ==========");
 alert(`VEHÍCULOS ATENDIDOS: ${vehiculosAtendidos}`);
 
 // 2. Litros restantes
-let litrosVendidos = CAPACIDAD_TOTAL - litrosActuales;
+litrosVendidos = CAPACIDAD_TOTAL - litrosActuales;
 alert(`LITROS RESTANTES: ${litrosActuales.toFixed(2)} litros\n` +
       `Litros vendidos: ${litrosVendidos.toFixed(2)} litros`);
 
 // 3. Importe medio por vehículo
 if(vehiculosAtendidos > 0){
-    let importeMedio = importeTotalRecaudado / vehiculosAtendidos;
+    importeMedio = importeTotalRecaudado / vehiculosAtendidos;
     alert(`IMPORTE MEDIO POR VEHÍCULO: ${importeMedio.toFixed(2)}€\n` +
           `Recaudación total: ${importeTotalRecaudado.toFixed(2)}€`);
 } else {
@@ -96,9 +103,9 @@ if(vehiculosAtendidos > 0){
 }
 
 // 4. Porcentaje sobre el mínimo
-let litrosSobreMinimo = litrosActuales - CAPACIDAD_MINIMA;
-let porcentajeSobreMinimo = (litrosSobreMinimo / CAPACIDAD_MINIMA) * 100;
-let porcentajeTotal = (litrosActuales / CAPACIDAD_TOTAL) * 100;
+litrosSobreMinimo = litrosActuales - CAPACIDAD_MINIMA;
+porcentajeSobreMinimo = (litrosSobreMinimo / CAPACIDAD_MINIMA) * 100;
+porcentajeTotal = (litrosActuales / CAPACIDAD_TOTAL) * 100;
 
 alert(`ANÁLISIS DE CAPACIDAD\n` +
       `Litros sobre mínimo: ${litrosSobreMinimo.toFixed(2)} litros\n` +
