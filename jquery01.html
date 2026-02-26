@@ -1,0 +1,169 @@
+<html>
+	<head>
+		<title>Título</title>
+		<style>
+			#textolargo{
+				width: 150px;
+				height: 50px;
+			}
+			#enviar{
+				background-color: black;
+				color: white;
+			}
+			#multiple{
+				height: 150px;
+			}
+
+			.error{
+				display: none;
+				color: red;
+				font-weight: bold;
+			}
+		</style>
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+		
+
+	</head>
+
+	<body>
+
+
+		<form id="formulario" action="registraformulario.html" method="get" enctype="multipart/form-data">
+			
+			<label for="texto">Texto</label>
+			<input type="text" name="texto" class="textoClass" id="texto" placeholder="Texto" maxlength="15" value="Hola Mundo" pattern="[A-Za-z]+" required />
+			<div class="error"></div>
+			<br>
+
+			<input type="hidden" name="oculto" class="textoClass" id="oculto" value="1"/>
+
+			<label for="number">Número</label>
+			<input type="number" name="numeros" class="textoClass" id="numeros" minlength="5" />
+			<div class="error2"></div>
+			<br>
+
+			<label for="decimal">Decimal</label>
+			<input type="number" step="0.02" name="decimal" id="decimal" />
+			<br>
+
+			<label for="decimal">Fecha</label>
+			<input type="datetime-local"  name="fecha" id="fecha" />
+			<br>
+
+			<label for="decimal">E-Mail</label>
+			<input type="email" id="email" name="email" />
+			<br>
+
+			<label for="deshabilitado">deshabilitado</label>
+			<input type="text" id="deshabilitado" name="deshabilitado" value="readonly" disabled />
+			<br>
+
+			<label for="telefono">Telefono</label>
+			<input type="tel" id="telefono" name="telefono" />
+			<br>
+
+			<label for="password">Contraseña</label>
+			<input type="password" name="contrasena" id="contrasena" />
+			<br>
+
+			<label for="fichero">Contraseña</label>
+			<input type="file" name="fichero" id="fichero" />
+			<br>
+			
+			<label for="password">Campo de texto largo</label>
+			<textarea name="textolargo" id="textolargo" cols="100" rows="5">Aquí va el value</textarea>
+			<br>
+
+			<label for="boton">Boton</label>
+			<input type="button" name="boton" id="boton" value="Botón Input" />
+			<br>
+			
+			<label for="boton">Boton</label>
+			<button name="boton2" id="boton2">Botón Input 2</button>
+			<br>
+
+			<input type="submit" name="enviar" id="enviar" /> 
+			<input type="reset" />
+
+			<p>
+				<label for="boton">coches</label><br>
+				<input type="radio" name="coches" value="1">1
+				<input type="radio" name="coches" value="2">2
+				<input type="radio" name="coches" value="3">3
+				<input type="radio" name="coches" value="4">4
+
+			</p>
+
+			<p>
+				<label for="check">Quiniela</label>
+				<input type="checkbox" name="check" value="1">1
+				<input type="checkbox" name="check" value="2">X
+				<input type="checkbox" name="check" value="3">2
+			</p>
+
+			<p>
+				<label for="seleccion">Quiniela</label>
+				<select name="seleccion" id="seleccion">
+					<option value="1">1 - Coche</option>
+					<option value="2">2 - Coches</option>
+					<option value="3">3 - Coches</option>
+					<option value="4" selected>4 - Coches</option>
+					<option value="5">5 - Coches</option>
+				</select>
+			</p>
+			<p>
+				<select multiple name="multiple" id="multiple">
+					<option value="rojo">Rojo</option>
+					<option value="amarillo">Amarillo</option>
+					<option value="azul">Azul</option>
+					<option value="verde">Verde</option>
+				</select>
+			</p>
+
+		</form>
+
+
+	</body>
+	<script>
+        $(document).ready(function() {
+
+            /*alert($("#texto").val());
+
+            alert($(".textoClass").val());
+            $(".textoClass").each(function(){
+                alert($(this).val());
+            }
+            );*/
+
+            var formulario = $("#formulario");
+
+            formulario.on("submit", function(e)
+            {
+                //pone una clase a error display: none
+                $(".error").hide();
+                //sirve para que el formulario no se envíe automáticamente
+                e.preventDefault(); 
+                
+                //val es el valor (value) del input del formulario y lenght es la función que devuelve el número de caracteres del val
+                if($("#texto").val().length > 4)
+                {
+                    //esto permite enviar el formulario submit
+                    //this <- hace referencia al objeto actual!! en este caso formulario, es decir $("#formulario")
+                    this.submit();
+                }
+                else
+                {
+                    //con text escribimos dentro del div
+                    $(".error").text("Error, es menor que 4 caracteres");
+                    //pone una clase a error display: block
+                    $(".error").show("slow");
+                    
+                }
+                
+
+            });
+            
+        });
+
+	</script>
+</html>
