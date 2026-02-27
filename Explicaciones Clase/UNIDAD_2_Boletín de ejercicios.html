@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Boletín UD02</title>
+</head>
+<body>
+    <h1>Boletín UD02 - Ejercicios JavaScript</h1>
+    <p>Abre la consola (F12) o observa los alerts al cargar la página.</p>
+
+<script>
+
+// =============================================
+// EJERCICIO 1
+// Visualizar los 10 primeros números naturales
+// =============================================
+let mensaje1 = "";
+for (let i = 1; i <= 10; i++) {
+    mensaje1 += i + "\n";
+}
+alert("Ejercicio 1 - Los 10 primeros números naturales:\n\n" + mensaje1);
+
+// =============================================
+// EJERCICIO 2
+// Visualizar los 10 primeros números pares
+// =============================================
+let mensaje2 = "";
+for (let i = 1; i <= 10; i++) {
+    mensaje2 += (i * 2) + "\n";
+}
+alert("Ejercicio 2 - Los 10 primeros números pares:\n\n" + mensaje2);
+
+// =============================================
+// EJERCICIO 3
+// Visualizar la media de los 10 primeros números naturales
+// =============================================
+let suma3 = 0;
+for (let i = 1; i <= 10; i++) {
+    suma3 += i;
+}
+alert("Ejercicio 3 - Media de los 10 primeros naturales: " + (suma3 / 10));
+
+// =============================================
+// EJERCICIO 4
+// Visualizar los N primeros números naturales
+// =============================================
+let n4 = parseInt(prompt("Ejercicio 4 - Introduce N:", "10"));
+let mensaje4 = "";
+for (let i = 1; i <= n4; i++) {
+    mensaje4 += i + "\n";
+}
+alert("Ejercicio 4 - Los " + n4 + " primeros naturales:\n\n" + mensaje4);
+
+// =============================================
+// EJERCICIO 5
+// Visualizar la suma de los N primeros números naturales
+// =============================================
+let n5 = parseInt(prompt("Ejercicio 5 - Introduce N:", "10"));
+let suma5 = 0;
+for (let i = 1; i <= n5; i++) {
+    suma5 += i;
+}
+alert("Ejercicio 5 - Suma de los " + n5 + " primeros naturales: " + suma5);
+
+// =============================================
+// EJERCICIO 6
+// Visualizar la media de los N primeros números naturales
+// =============================================
+let n6 = parseInt(prompt("Ejercicio 6 - Introduce N:", "10"));
+let suma6 = 0;
+for (let i = 1; i <= n6; i++) {
+    suma6 += i;
+}
+alert("Ejercicio 6 - Media de los " + n6 + " primeros naturales: " + (suma6 / n6));
+
+// =============================================
+// EJERCICIO 7
+// Hacer 4, 5 y 6 en el mismo ejercicio
+// =============================================
+let n7 = parseInt(prompt("Ejercicio 7 - Introduce N:", "10"));
+let suma7 = 0;
+let mensaje7 = "Los " + n7 + " primeros naturales:\n\n";
+for (let i = 1; i <= n7; i++) {
+    mensaje7 += i + "\n";
+    suma7 += i;
+}
+mensaje7 += "\nSuma:  " + suma7;
+mensaje7 += "\nMedia: " + (suma7 / n7);
+alert("Ejercicio 7\n\n" + mensaje7);
+
+// =============================================
+// EJERCICIO 8
+// Visualizar si 327 es un número primo
+// =============================================
+let numero8 = 327;
+let esPrimo8 = true;
+for (let i = 2; i <= Math.sqrt(numero8); i++) {
+    if (numero8 % i === 0) {
+        esPrimo8 = false;
+        break;
+    }
+}
+alert("Ejercicio 8 - El número " + numero8 + (esPrimo8 ? " ES primo." : " NO es primo."));
+
+// =============================================
+// EJERCICIO 9
+// Visualizar si un número N es primo
+// =============================================
+let numero9 = parseInt(prompt("Ejercicio 9 - Introduce un número:", ""));
+let esPrimo9 = true;
+if (numero9 < 2) {
+    esPrimo9 = false;
+} else {
+    for (let i = 2; i <= Math.sqrt(numero9); i++) {
+        if (numero9 % i === 0) {
+            esPrimo9 = false;
+            break;
+        }
+    }
+}
+alert("Ejercicio 9 - El número " + numero9 + (esPrimo9 ? " ES primo." : " NO es primo."));
+
+// =============================================
+// EJERCICIO 10
+// Visualizar los 10 primeros números primos
+// =============================================
+let primos10 = "";
+let cantidad10 = 0;
+let numero10 = 2;
+while (cantidad10 < 10) {
+    let esPrimo10 = true;
+    for (let i = 2; i <= Math.sqrt(numero10); i++) {
+        if (numero10 % i === 0) {
+            esPrimo10 = false;
+            break;
+        }
+    }
+    if (esPrimo10) {
+        primos10 += numero10 + "  ";
+        cantidad10++;
+    }
+    numero10++;
+}
+alert("Ejercicio 10 - Los 10 primeros números primos:\n\n" + primos10);
+
+// =============================================
+// EJERCICIO 11
+// Visualizar los N primeros números primos, su suma y su media
+// =============================================
+let n11 = parseInt(prompt("Ejercicio 11 - Introduce N:", "10"));
+let primos11 = "";
+let cantidad11 = 0;
+let numero11 = 2;
+let suma11 = 0;
+while (cantidad11 < n11) {
+    let esPrimo11 = true;
+    for (let i = 2; i <= Math.sqrt(numero11); i++) {
+        if (numero11 % i === 0) {
+            esPrimo11 = false;
+            break;
+        }
+    }
+    if (esPrimo11) {
+        primos11 += numero11 + "  ";
+        suma11 += numero11;
+        cantidad11++;
+    }
+    numero11++;
+}
+alert("Ejercicio 11 - Los " + n11 + " primeros primos:\n\n" + primos11 + "\n\nSuma:  " + suma11 + "\nMedia: " + (suma11 / n11).toFixed(2));
+
+// =============================================
+// EJERCICIO 12
+// Media de una secuencia introducida por el usuario (finaliza con *)
+// =============================================
+let suma12 = 0;
+let cantidad12 = 0;
+let entrada12 = prompt("Ejercicio 12 - Introduce un número (o * para acabar):", "");
+while (entrada12 !== "*") {
+    suma12 += parseFloat(entrada12);
+    cantidad12++;
+    entrada12 = prompt("Ejercicio 12 - Introduce un número (o * para acabar):", "");
+}
+if (cantidad12 > 0) {
+    alert("Ejercicio 12 - Media de la secuencia: " + (suma12 / cantidad12).toFixed(2));
+} else {
+    alert("Ejercicio 12 - No se introdujeron números.");
+}
+
+// =============================================
+// EJERCICIO 13
+// El 12 pero visualizando los números introducidos y la media
+// =============================================
+let suma13 = 0;
+let cantidad13 = 0;
+let mensaje13 = "Números introducidos:\n\n";
+let entrada13 = prompt("Ejercicio 13 - Introduce un número (o * para acabar):", "");
+while (entrada13 !== "*") {
+    let numero13 = parseFloat(entrada13);
+    suma13 += numero13;
+    cantidad13++;
+    mensaje13 += numero13 + "\n";
+    entrada13 = prompt("Ejercicio 13 - Introduce un número (o * para acabar):", "");
+}
+if (cantidad13 > 0) {
+    mensaje13 += "\nMedia: " + (suma13 / cantidad13).toFixed(2);
+} else {
+    mensaje13 = "No se introdujeron números.";
+}
+alert("Ejercicio 13\n\n" + mensaje13);
+
+// =============================================
+// EJERCICIO 14
+// Ciudades con temperaturas y media global
+// (datos simulados como estarían en una "hoja")
+// =============================================
+let ciudades14 = ["Ourense",  "Santiago", "A Coruña", "Lugo",  "Vigo"];
+let temps14     = [
+    [4, 12, 7],
+    [6, 14, 9],
+    [7, 13, 8],
+    [2, 10, 5],
+    [8, 15, 10]
+];
+let mensaje14   = "CIUDADES Y TEMPERATURAS\n========================\n";
+let sumaTotal14 = 0;
+let totalTemps14 = 0;
+for (let i = 0; i < ciudades14.length; i++) {
+    let mediaCiudad = (temps14[i][0] + temps14[i][1] + temps14[i][2]) / 3;
+    mensaje14 += ciudades14[i] + "\n";
+    mensaje14 += "  Temps: " + temps14[i][0] + "°C, " + temps14[i][1] + "°C, " + temps14[i][2] + "°C\n";
+    mensaje14 += "  Media: " + mediaCiudad.toFixed(2) + "°C\n";
+    mensaje14 += "------------------------\n";
+    sumaTotal14 += temps14[i][0] + temps14[i][1] + temps14[i][2];
+    totalTemps14 += 3;
+}
+mensaje14 += "Ciudades: " + ciudades14.length + "\n";
+mensaje14 += "Temp. media global: " + (sumaTotal14 / totalTemps14).toFixed(2) + "°C";
+alert("Ejercicio 14\n\n" + mensaje14);
+
+// =============================================
+// EJERCICIO 15
+// Visualizar los N primeros términos de Fibonacci
+// =============================================
+let n15 = parseInt(prompt("Ejercicio 15 - Introduce N:", "10"));
+let mensaje15 = "";
+let a15 = 0;
+let b15 = 1;
+for (let i = 0; i < n15; i++) {
+    mensaje15 += a15 + "  ";
+    let temp15 = b15;
+    b15 = a15 + b15;
+    a15 = temp15;
+}
+alert("Ejercicio 15 - Los " + n15 + " primeros términos de Fibonacci:\n\n" + mensaje15);
+
+// =============================================
+// EJERCICIO 16
+// Visualizar si un número N pertenece a Fibonacci
+// =============================================
+let n16 = parseInt(prompt("Ejercicio 16 - Introduce un número:", ""));
+let esFib16 = false;
+let a16 = 0;
+let b16 = 1;
+if (n16 === 0 || n16 === 1) {
+    esFib16 = true;
+} else {
+    while (b16 < n16) {
+        let temp16 = b16;
+        b16 = a16 + b16;
+        a16 = temp16;
+    }
+    if (b16 === n16) esFib16 = true;
+}
+alert("Ejercicio 16 - El número " + n16 + (esFib16 ? " SÍ pertenece" : " NO pertenece") + " a Fibonacci.");
+
+// =============================================
+// EJERCICIO 17
+// Visualizar la posición que ocupa un N en Fibonacci
+// =============================================
+let n17 = parseInt(prompt("Ejercicio 17 - Introduce un número:", ""));
+let posicion17 = -1;
+let a17 = 0;
+let b17 = 1;
+if (n17 === 0) {
+    posicion17 = 0;
+} else if (n17 === 1) {
+    posicion17 = 1;
+} else {
+    let pos17 = 2;
+    while (b17 < n17) {
+        let temp17 = b17;
+        b17 = a17 + b17;
+        a17 = temp17;
+        pos17++;
+    }
+    if (b17 === n17) posicion17 = pos17;
+}
+if (posicion17 !== -1) {
+    alert("Ejercicio 17 - El número " + n17 + " ocupa la posición " + posicion17 + " en Fibonacci.");
+} else {
+    alert("Ejercicio 17 - El número " + n17 + " NO pertenece a Fibonacci.");
+}
+
+// =============================================
+// EJERCICIO 18
+// Términos anterior y posterior a un N en Fibonacci
+// =============================================
+let n18 = parseInt(prompt("Ejercicio 18 - Introduce un número:", ""));
+let a18 = 0;
+let b18 = 1;
+if (n18 === 0) {
+    alert("Ejercicio 18\n\n0 en Fibonacci:\n\nAnterior: No existe\nPosterior: 1");
+} else {
+    while (b18 < n18) {
+        let temp18 = b18;
+        b18 = a18 + b18;
+        a18 = temp18;
+    }
+    if (b18 === n18) {
+        let siguiente18 = a18 + b18;
+        alert("Ejercicio 18\n\n" + n18 + " en Fibonacci:\n\nAnterior: " + a18 + "\nPosterior: " + siguiente18);
+    } else {
+        alert("Ejercicio 18 - El número " + n18 + " NO pertenece a Fibonacci.");
+    }
+}
+
+</script>
+</body>
+</html>
