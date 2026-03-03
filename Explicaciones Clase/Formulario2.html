@@ -10,7 +10,12 @@
     <button id="eliminar">Eliminar</button>
 <br>
 
-    <select id="selectLista"></select>
+    <select id="selectLista">
+        <option value="1">ROJO</option>
+        <option value="2">VERDE</option>
+        <option value="3">AZUL</option>
+        <option value="4">AMARILLO</option>
+    </select>
     
     <ul id="lista"></ul>
 
@@ -22,34 +27,46 @@ let texto = document.getElementById("texto");
 let agregar = document.getElementById("agregar");
 let borrar = document.getElementById("eliminar");
 let lista = document.getElementById("lista"); // <-- Faltaba el punto y coma aquí
-
+let selectLista = document.getElementById("selectLista");
+let i = 0; 
 agregar.addEventListener("click", function() {
     let valor = texto.value.trim();
     
-    if (valor !== "") { 
+    if (valor !== "") {
+        // Añadir a la lista <ul>
         let li = document.createElement("li");
         li.textContent = valor;
         lista.appendChild(li);
-        
-        // Limpiamos y devolvemos el foco
+
+        // Añadir al <select>
+        let option = document.createElement("option");
+        option.textContent = valor;
+        option.value = i; 
+        i++; // Incrementamos para el siguiente elemento
+        selectLista.appendChild(option);
+
+        // Limpiar y resetear
         texto.value = "";
         texto.focus();
     }
 });
-texto.addEventListener("keyup",function() {
-    
-    if(event.key === "Enter"){agregar.click();}
 
-})
-
-borrar.addEventListener("click",function() {
-    
-    if(lista.lastElementChild){
-
-        lista.lastElementChild.remove();
+// Corrección en el listener del Enter: pasar 'event' como parámetro
+texto.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        agregar.click();
     }
+});
 
-})
+borrar.addEventListener("click", function() {
+    if (lista.lastElementChild) {
+        lista.lastElementChild.remove();
+        // Opcional: eliminar también la última opción del select
+        if (selectLista.options.length > 0) {
+            selectLista.lastElementChild.remove();
+        }
+    }
+});
 
 </script>
 
