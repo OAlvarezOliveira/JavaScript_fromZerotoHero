@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+<body>
+    <input type="text" id="texto">
+    <button id="agregar">Añadir a lista</button>
+    <button id="eliminar">Eliminar</button>
+
+    <ul id="lista"></ul>
+
+    
+</body>
+
+<script>
+
+let texto = document.getElementById("texto");
+let agregar = document.getElementById("agregar");
+let borrar = document.getElementById("eliminar");
+let lista = document.getElementById("lista"); // <-- Faltaba el punto y coma aquí
+
+agregar.addEventListener("click", function() {
+    let valor = texto.value.trim();
+    
+    if (valor !== "") { 
+        let li = document.createElement("li");
+        li.textContent = valor;
+        lista.appendChild(li);
+        
+        // Limpiamos y devolvemos el foco
+        texto.value = "";
+        texto.focus();
+    }
+});
+texto.addEventListener("keyup",function() {
+    
+    if(event.key === "Enter"){agregar.click();}
+
+})
+
+borrar.addEventListener("click",function() {
+    
+    if(lista.lastElementChild){
+
+        lista.lastElementChild.remove();
+    }
+
+})
+
+</script>
+
+</html>
