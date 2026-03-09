@@ -1,0 +1,105 @@
+#grid-container{
+    display: grid;
+    grid-template-columns: 10% 5% 55% 7% 15% 8%;
+    justify-content: center;
+}
+
+.logo{
+    margin-top: 15px;
+}
+
+.clase2{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    text-align: center;
+}
+
+.clase2 input{
+    width: 95%;
+    height: 35px;
+    border-radius: 19px;
+    border: 1px solid gray;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.clase3{
+    text-align: center;
+}
+
+.clase3 button{
+    border-radius: 19px;
+    border: 2px solid mediumseagreen;
+    padding: 10px;
+    font-weight: bold;
+    display: inline;
+    margin-top: 15px;
+    width: 95%;
+    height: 40px;
+}
+
+.clase4{
+    text-align: center;
+}
+
+.clase4 button{
+    border-radius: 19px;
+    border: 2px solid mediumseagreen;
+    background-color: mediumseagreen;
+    font-weight: bold;
+    padding: 10px;
+    display: inline;
+    margin-top: 15px;
+    width: 80%;
+    height: 40px;
+}
+
+.clase5{
+    grid-column-start: 1;
+    grid-column-end: 7;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.clase5 button{
+    border-radius: 19px;
+    border: 1px solid black;
+    padding: 10px;
+    display: inline;
+    margin: 15px 10px;
+    background-color: white;
+}
+
+.clase5 p{
+    display: inline;
+    margin-left: 10px;
+}
+.clase6{
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.clase6 img{
+    margin: 10px 0px;
+    width: 100%;
+    height: auto;
+}
+.clase7{
+    display: grid;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-template-columns: 24% 24% 24% 24%;
+    justify-content: space-between;
+}
+.clase7 div{
+    overflow: hidden;
+}
+.clase7 img{
+    border-radius: 15px 15px;
+    width: 100%;
+}
+.precio{
+    font-weight: bold;
+}
+.venta{
+    color: gray;
+}

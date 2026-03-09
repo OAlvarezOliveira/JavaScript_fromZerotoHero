@@ -1,0 +1,159 @@
+body{
+    font-family:'Times New Roman', Times, serif;
+}
+#contenedor{
+    width: 100%;
+    margin: 0px;
+}
+header{
+    width: 100%;
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+#headerSupExt{
+    background-color: #EEEEEE;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#headerSupInt{
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#headerSupInt p{
+    color: gray;
+    font-weight: bold;
+    display: inline;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+#headerMed{
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#headerMed div{
+    margin-top: 10px;
+}
+#headerMed div p{
+    font-weight: bolder;
+    display: inline;
+    margin: 20px;
+    font-size: larger;
+}
+#headerMed img{
+    width: auto;
+    height: 39px;
+}
+.seleccionado{
+    color: white;
+    background-color: black;
+    padding: 8px;
+}
+nav{
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+nav p{
+    display: inline;
+    margin-right: 10px;
+}
+nav div{
+    flex-grow: 3;
+}
+nav input{
+    height: 35px;
+    flex-grow: 2;
+}
+#migadepan{
+    width: 65%;
+    margin: auto;
+    margin-top: 30px;
+}
+#migadepan p{
+    font-weight: bold;
+}
+#migadepan h2{
+    font-size: 30pt;
+    font-weight: 100;
+    margin-bottom: 0px;
+}
+#migadepan h1{
+    font-size: 35pt;
+    margin-top: 0px;
+}
+#inferior{
+    width: 65%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+aside{
+    width: 25%;
+}
+.parrafo1{
+    margin-left: 0px;
+}
+.parrafo2{
+    margin-left: 10px;
+}
+.parrafo3{
+    margin-left: 20px;
+}
+main{
+    width: 75%;
+}
+#filtros{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#filtros p{
+    border: 1px solid black;
+    display: inline;
+    margin: 0px 10px 10px 0px;
+    font-size: 15pt;
+    padding: 10px;
+}
+section{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+article{
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+article img{
+    width: 100%;
+    height: auto;
+}
+.marca{
+    padding: 0px;
+    margin: 0px;
+}
+.modelo{
+    padding: 0px;
+    margin: 0px;
+}
+.precio{
+    padding: 0px;
+    margin: 0px;
+}

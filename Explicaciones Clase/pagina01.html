@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<style>
+			body{
+				height: 100%;
+				width:100%;
+				margin: 0;
+			}
+			header{
+				position:relative;
+				width: 100%;
+				background-color: red;
+				height: 150px;
+			}
+			.logo{
+				position:relative;
+				float:left;
+				width: 150px;
+				height: 125px;
+				background-color: blue;
+			}
+			nav{
+				position: relative;
+				float: right;
+				background-color: yellow;
+				width: 50%;
+				height: 125px;
+			}
+
+			menu{
+				position: relative;
+				float:left;
+				min-height:600px;
+				width: 125px;
+				margin: 0;
+				background-color: orange
+			}
+			article{
+				position:relative;
+				float: left;
+				width: calc(50% - 83px);
+				min-height: 600px;
+				background-color: blue;
+			}
+			footer{
+				width:100%;
+				height: 125px;
+				background-color: violet;
+				clear: both;
+			}
+			.otroFondo{
+				background-color: orange !important;
+			}
+			.fondoImportante{
+				background-color: green;
+			}
+
+			nav ul li{
+				display: inline-block;
+				list-style: none;
+				margin: 20px;
+				vertical-align: middle;
+			}
+			
+			nav ul li a{
+				float: left;
+				border: solid 2px #FF0000;
+				font-size: 2.75rem;
+				width: 100px;
+				height: 50px;
+				text-align: center;
+				padding: 10px;
+				text-decoration: none;
+				color: black;
+			}
+			
+			nav ul li a:hover{
+				background-color: black;
+				color: white;
+			}
+			nav ul li a:visited{
+				background-color: red;
+				color: yellow;
+			}
+			
+		</style>
+	</head>
+	
+	
+	
+	<header>
+		<div class="logo">Logotipo</div>
+		<nav>
+			<ul>
+				<li><a href="https://www.google.es/" target="_Blank">A</a></li>
+				<li><a href="https://www.google.es/" target="_Blank">B</a></li>
+				<li><a href="https://www.google.es/" target="_Blank">C</a></li>
+				<li><a href="https://www.google.es/" target="_Blank">D</a></li>
+			</ul>
+		</nav>
+	</header>
+		<menu>Menu</menu>
+		<article></article>
+		<article class="otroFondo fondoImportante"></article>
+	<footer>
+	</footer>
+	
+	
+	
+</html>
